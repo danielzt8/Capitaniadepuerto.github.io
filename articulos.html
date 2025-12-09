@@ -5,52 +5,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
     <link rel="stylesheet" href="style.css" />
     <title>Artículos - Capitanía de Puerto</title>
 </head>
 
-<body>
-    <!-- Header Section -->
-    <header class="bg-white text-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <header class="bg-white text-gray-800 shadow-sm z-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10">
             <div class="flex items-center justify-between">
-                <!-- Logo Section -->
                 <div class="flex-shrink-0">
                     <a href="index.html" class="text-2xl font-bold">
                         <img src="image/capitania_web2.png" alt="Logo" class="h-10 w-auto inline-block" />
                     </a>
                 </div>
-                <!-- Barra de búsqueda -->
                 <form class="mx-4 flex-1 max-w-md hidden md:flex" role="search">
                     <input type="search" placeholder="Buscar artículos..."
                         class="w-full px-4 py-2 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-yellow-400" />
                     <button type="submit"
-                        class="bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-r-full transition-all">
+                        class="bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-r-full transition-all cursor-pointer">
                         Buscar
                     </button>
                 </form>
 
-                <!-- Navigation Menu -->
-                <nav class="hidden md:flex space-x-10 text-sm">
-                    <a href="nosotros.html" class="hover:text-gray-300 transition-all">Quienes somos</a>
-                    <a href="index.html#services" class="hover:text-gray-300 transition-all">Consultas</a>
-                    <a href="index.html#faq" class="hover:text-gray-300 transition-all">Dirección de Gente de Mar</a>
-                    <a href="articulos.html"
-                        class="text-blue-900 font-bold hover:text-blue-700 transition-all">Avisos</a>
+                <nav class="hidden md:flex space-x-10 text-sm font-medium">
+                    <a href="nosotros.html" class="hover:text-blue-900 transition-colors">Quienes somos</a>
+                    <a href="index.html#services" class="hover:text-blue-900 transition-colors">Consultas</a>
+                    <a href="index.html#faq" class="hover:text-blue-900 transition-colors">Dirección de Gente de Mar</a>
+                    <a href="articulos.html" class="text-blue-900 font-bold border-b-2 border-blue-900 pb-1">Avisos</a>
                 </nav>
 
-                <!-- Call-to-Action Button -->
                 <div class="hidden md:block">
                     <a href="index.html#contact"
-                        class="bg-blue-900 ml-4 hover:bg-blue-700 text-white py-2 px-6 rounded-full text-lg transition-all">
+                        class="bg-blue-900 ml-4 hover:bg-blue-800 text-white py-2 px-6 rounded-full text-lg transition-all shadow-md hover:shadow-lg">
                         Contacto
                     </a>
                 </div>
 
-                <!-- Mobile Menu Button (for smaller screens) -->
                 <div class="md:hidden flex items-center">
-                    <button id="menu-button" class="text-blue-900 focus:outline-none">
+                    <button id="menu-button" class="text-blue-900 focus:outline-none p-2">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -60,262 +53,379 @@
                 </div>
             </div>
 
-            <!-- Mobile Navigation Menu -->
-            <div id="mobile-menu" class="md:hidden mt-5 hidden space-y-4">
-                <a href="index.html" class="block text-lg hover:text-gray-300 transition-all">Home</a>
-                <a href="nosotros.html" class="block text-lg hover:text-gray-300 transition-all">Quienes somos</a>
-                <a href="index.html#services" class="block text-lg hover:text-gray-300 transition-all">Consultas</a>
+            <div id="mobile-menu" class="md:hidden mt-5 hidden space-y-4 border-t border-gray-100 pt-4">
+                <a href="index.html" class="block text-lg hover:text-blue-900 transition-all">Home</a>
+                <a href="nosotros.html" class="block text-lg hover:text-blue-900 transition-all">Quienes somos</a>
+                <a href="index.html#services" class="block text-lg hover:text-blue-900 transition-all">Consultas</a>
                 <a href="articulos.html" class="block text-lg font-bold text-blue-900 transition-all">Avisos</a>
-                <a href="index.html#contact" class="block text-lg hover:text-gray-300 transition-all">Contacto</a>
+                <a href="index.html#contact" class="block text-lg hover:text-blue-900 transition-all">Contacto</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section for Articles -->
-    <section class="bg-blue-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl font-bold sm:text-5xl mb-4">Avisos y Noticias</h1>
-            <p class="text-xl text-blue-100 max-w-3xl mx-auto">
-                Mantente al día con las últimas informaciones, comunicados y noticias de la Capitanía de Puerto.
+    <div class="relative bg-blue-900 h-[350px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1600"
+                alt="Background" class="w-full h-full object-cover opacity-30 scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-900 via-transparent to-transparent"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-blue-800/50 border border-blue-400 text-blue-200 text-sm font-semibold mb-4 backdrop-blur-sm">
+                Blog Oficial
+            </span>
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl drop-shadow-lg">
+                Avisos y Noticias
+            </h1>
+            <p class="mt-6 text-xl text-blue-100 max-w-2xl mx-auto font-light leading-relaxed">
+                Mantente informado con los últimos comunicados, eventos y actualizaciones oficiales de la Capitanía de
+                Puerto.
             </p>
         </div>
-    </section>
+    </div>
 
-    <!-- Articles Grid -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <main class="flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-                <!-- Article 1 -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button
+                    class="px-6 py-2 rounded-full bg-blue-900 text-white font-medium shadow-md ring-2 ring-offset-2 ring-blue-900 transition-all">Todos</button>
+                <button
+                    class="px-6 py-2 rounded-full bg-white text-gray-600 font-medium border border-gray-200 hover:bg-gray-50 hover:text-blue-900 transition-all">Noticias</button>
+                <button
+                    class="px-6 py-2 rounded-full bg-white text-gray-600 font-medium border border-gray-200 hover:bg-gray-50 hover:text-blue-900 transition-all">Avisos</button>
+                <button
+                    class="px-6 py-2 rounded-full bg-white text-gray-600 font-medium border border-gray-200 hover:bg-gray-50 hover:text-blue-900 transition-all">Eventos</button>
+            </div>
+
+            <div class="mb-16">
                 <div
-                    class="rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                    <a href="articulo.html" class="block relative h-48 overflow-hidden group">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            src="https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                    class="group relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 border border-gray-100">
+                    <div class="grid lg:grid-cols-2">
+                        <div class="relative h-64 lg:h-auto overflow-hidden">
+                            <img src="https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200"
+                                class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                                alt="Destacado">
+                            <div class="absolute top-4 left-4">
+                                <span
+                                    class="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg uppercase tracking-wide">
+                                    Lo más reciente
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-8 lg:p-12 flex flex-col justify-center">
+                            <div class="flex items-center text-sm text-gray-500 mb-4 space-x-4">
+                                <span class="flex items-center">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    27 de Marzo, 2025
+                                </span>
+                                <span class="text-gray-300">|</span>
+                                <span class="text-blue-600 font-semibold">Noticia Principal</span>
+                            </div>
+                            <h2
+                                class="text-3xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-blue-900 transition-colors">
+                                <a href="articulo.html">Nuevo Reglamento de Navegación Costera 2025</a>
+                            </h2>
+                            <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                                La Capitanía de Puerto anuncia oficialmente las nuevas medidas obligatorias para
+                                fortalecer la seguridad en la navegación de embarcaciones menores y deportivas.
+                            </p>
+                            <div>
+                                <a href="articulo.html"
+                                    class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-900 hover:bg-blue-800 md:py-3 md:text-lg md:px-8 transition-all hover:-translate-y-1 shadow-md">
+                                    Leer artículo completo
+                                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <article
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+                    <a href="articulo.html" class="relative h-56 overflow-hidden block">
+                        <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                            src="https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                             alt="Article Image">
-                        <div
-                            class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300">
-                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+                        <span
+                            class="absolute top-4 right-4 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm">
+                            Aviso
+                        </span>
                     </a>
-                    <div class="px-6 py-6 flex-1 flex flex-col">
-                        <div class="mb-4">
-                            <span
-                                class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide">Noticia</span>
-                            <span class="text-gray-500 text-xs ml-2">27 de Marzo, 2025</span>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="text-sm text-gray-400 mb-3 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Hace 2 días
                         </div>
-                        <a href="articulo.html" class="block mb-2">
-                            <h3 class="text-xl font-bold text-gray-900 hover:text-blue-900 transition-colors">Nuevo
-                                Reglamento de Navegación</h3>
-                        </a>
-                        <p class="text-gray-600 text-sm mb-4 flex-1">
-                            La Capitanía de Puerto anuncia nuevas medidas para la seguridad en la navegación costera.
-                            Conoce los detalles aquí.
+                        <h3
+                            class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors leading-snug">
+                            <a href="articulo.html">Mantenimiento de Muelle Principal</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-1">
+                            Se informa a la comunidad marítima que el muelle estará cerrado por mantenimiento preventivo
+                            durante la próxima semana.
                         </p>
                         <a href="articulo.html"
-                            class="inline-flex items-center text-blue-900 font-semibold hover:underline">
+                            class="inline-flex items-center text-blue-900 font-semibold text-sm hover:underline mt-auto group/link">
                             Leer más
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-4 h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                             </svg>
                         </a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Article 2 -->
-                <div
-                    class="rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                    <a href="articulo.html" class="block relative h-48 overflow-hidden group">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            src="https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                <article
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+                    <a href="articulo.html" class="relative h-56 overflow-hidden block">
+                        <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                            src="https://images.pexels.com/photos/257816/pexels-photo-257816.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                             alt="Article Image">
-                        <div
-                            class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300">
-                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+                        <span
+                            class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm">
+                            Evento
+                        </span>
                     </a>
-                    <div class="px-6 py-6 flex-1 flex flex-col">
-                        <div class="mb-4">
-                            <span
-                                class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide">Aviso</span>
-                            <span class="text-gray-500 text-xs ml-2">25 de Marzo, 2025</span>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="text-sm text-gray-400 mb-3 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            20 de Marzo, 2025
                         </div>
-                        <a href="articulo.html" class="block mb-2">
-                            <h3 class="text-xl font-bold text-gray-900 hover:text-blue-900 transition-colors">
-                                Mantenimiento de Muelle Principal</h3>
-                        </a>
-                        <p class="text-gray-600 text-sm mb-4 flex-1">
-                            Se informa a la comunidad marítima que el muelle principal estará en mantenimiento durante
-                            la próxima semana.
+                        <h3
+                            class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors leading-snug">
+                            <a href="articulo.html">Jornada de Limpieza Costera</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-1">
+                            Únete a nosotros en la jornada anual de limpieza. ¡Ayúdanos a cuidar nuestro océano y
+                            playas!
                         </p>
                         <a href="articulo.html"
-                            class="inline-flex items-center text-blue-900 font-semibold hover:underline">
+                            class="inline-flex items-center text-blue-900 font-semibold text-sm hover:underline mt-auto group/link">
                             Leer más
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-4 h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                             </svg>
                         </a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Article 3 -->
-                <div
-                    class="rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                    <a href="articulo.html" class="block relative h-48 overflow-hidden group">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            src="https://images.pexels.com/photos/257816/pexels-photo-257816.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
-                            alt="Article Image">
-                        <div
-                            class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300">
-                        </div>
-                    </a>
-                    <div class="px-6 py-6 flex-1 flex flex-col">
-                        <div class="mb-4">
-                            <span
-                                class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide">Evento</span>
-                            <span class="text-gray-500 text-xs ml-2">20 de Marzo, 2025</span>
-                        </div>
-                        <a href="articulo.html" class="block mb-2">
-                            <h3 class="text-xl font-bold text-gray-900 hover:text-blue-900 transition-colors">Jornada de
-                                Limpieza Costera</h3>
-                        </a>
-                        <p class="text-gray-600 text-sm mb-4 flex-1">
-                            Únete a nosotros en la jornada anual de limpieza de nuestras playas. ¡Ayúdanos a cuidar
-                            nuestro océano!
-                        </p>
-                        <a href="articulo.html"
-                            class="inline-flex items-center text-blue-900 font-semibold hover:underline">
-                            Leer más
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Article 4 (Added for more content) -->
-                <div
-                    class="rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                    <a href="articulo.html" class="block relative h-48 overflow-hidden group">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                <article
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+                    <a href="articulo.html" class="relative h-56 overflow-hidden block">
+                        <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                             src="https://images.pexels.com/photos/799091/pexels-photo-799091.jpeg" alt="Article Image">
-                        <div
-                            class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300">
-                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+                        <span
+                            class="absolute top-4 right-4 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm">
+                            Info
+                        </span>
                     </a>
-                    <div class="px-6 py-6 flex-1 flex flex-col">
-                        <div class="mb-4">
-                            <span
-                                class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide">Noticia</span>
-                            <span class="text-gray-500 text-xs ml-2">15 de Marzo, 2025</span>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="text-sm text-gray-400 mb-3 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            15 de Marzo, 2025
                         </div>
-                        <a href="articulo.html" class="block mb-2">
-                            <h3 class="text-xl font-bold text-gray-900 hover:text-blue-900 transition-colors">Inspección
-                                Anual de Embarcaciones</h3>
-                        </a>
-                        <p class="text-gray-600 text-sm mb-4 flex-1">
-                            Recordatorio para todos los propietarios de embarcaciones: la inspección anual comienza el
-                            próximo mes.
+                        <h3
+                            class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors leading-snug">
+                            <a href="articulo.html">Inspección Anual de Embarcaciones</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-1">
+                            Recordatorio importante: la fase de inspección obligatoria comienza el próximo mes. Revisa
+                            los requisitos.
                         </p>
                         <a href="articulo.html"
-                            class="inline-flex items-center text-blue-900 font-semibold hover:underline">
+                            class="inline-flex items-center text-blue-900 font-semibold text-sm hover:underline mt-auto group/link">
                             Leer más
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-4 h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                             </svg>
                         </a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Article 5 -->
-                <div
-                    class="rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                    <a href="articulo.html" class="block relative h-48 overflow-hidden group">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                <article
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+                    <a href="articulo.html" class="relative h-56 overflow-hidden block">
+                        <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                             src="https://images.pexels.com/photos/68737/cruise-ship-holidays-cruise-vacation-68737.jpeg"
                             alt="Article Image">
-                        <div
-                            class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300">
-                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+                        <span
+                            class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm">
+                            Alerta
+                        </span>
                     </a>
-                    <div class="px-6 py-6 flex-1 flex flex-col">
-                        <div class="mb-4">
-                            <span
-                                class="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide">Alerta</span>
-                            <span class="text-gray-500 text-xs ml-2">10 de Marzo, 2025</span>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="text-sm text-gray-400 mb-3 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            10 de Marzo, 2025
                         </div>
-                        <a href="articulo.html" class="block mb-2">
-                            <h3 class="text-xl font-bold text-gray-900 hover:text-blue-900 transition-colors">Pronóstico
-                                de Tormenta</h3>
-                        </a>
-                        <p class="text-gray-600 text-sm mb-4 flex-1">
-                            Se recomienda precaución a todas las embarcaciones menores debido al fuerte oleaje
-                            pronosticado.
+                        <h3
+                            class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors leading-snug">
+                            <a href="articulo.html">Pronóstico de Oleaje Fuerte</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-1">
+                            Se emite alerta amarilla para embarcaciones pequeñas debido a condiciones climáticas
+                            adversas.
                         </p>
                         <a href="articulo.html"
-                            class="inline-flex items-center text-blue-900 font-semibold hover:underline">
+                            class="inline-flex items-center text-blue-900 font-semibold text-sm hover:underline mt-auto group/link">
                             Leer más
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-4 h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                             </svg>
                         </a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Article 6 -->
-                <div
-                    class="rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                    <a href="articulo.html" class="block relative h-48 overflow-hidden group">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                <article
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+                    <a href="articulo.html" class="relative h-56 overflow-hidden block">
+                        <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                             src="https://images.pexels.com/photos/275637/pexels-photo-275637.jpeg" alt="Article Image">
-                        <div
-                            class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300">
-                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+                        <span
+                            class="absolute top-4 right-4 bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm">
+                            Curso
+                        </span>
                     </a>
-                    <div class="px-6 py-6 flex-1 flex flex-col">
-                        <div class="mb-4">
-                            <span
-                                class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide">Capacitación</span>
-                            <span class="text-gray-500 text-xs ml-2">5 de Marzo, 2025</span>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="text-sm text-gray-400 mb-3 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            5 de Marzo, 2025
                         </div>
-                        <a href="articulo.html" class="block mb-2">
-                            <h3 class="text-xl font-bold text-gray-900 hover:text-blue-900 transition-colors">Curso de
-                                Seguridad Marítima</h3>
-                        </a>
-                        <p class="text-gray-600 text-sm mb-4 flex-1">
-                            Abiertas las inscripciones para el curso básico de seguridad marítima para pescadores.
+                        <h3
+                            class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors leading-snug">
+                            <a href="articulo.html">Curso de Seguridad Marítima</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-1">
+                            Inscripciones abiertas para la capacitación de personal en protocolos de emergencia.
                         </p>
                         <a href="articulo.html"
-                            class="inline-flex items-center text-blue-900 font-semibold hover:underline">
+                            class="inline-flex items-center text-blue-900 font-semibold text-sm hover:underline mt-auto group/link">
                             Leer más
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-4 h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                             </svg>
                         </a>
                     </div>
-                </div>
+                </article>
+
+                <article
+                    class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+                    <a href="articulo.html" class="relative h-56 overflow-hidden block">
+                        <img class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                            src="https://images.pexels.com/photos/1005273/pexels-photo-1005273.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                            alt="Article Image">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+                        <span
+                            class="absolute top-4 right-4 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm">
+                            Historia
+                        </span>
+                    </a>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="text-sm text-gray-400 mb-3 flex items-center">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            1 de Marzo, 2025
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors leading-snug">
+                            <a href="articulo.html">Historia de Nuestros Faros</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-1">
+                            Descubre el legado arquitectónico e histórico de los faros que guían nuestras costas.
+                        </p>
+                        <a href="articulo.html"
+                            class="inline-flex items-center text-blue-900 font-semibold text-sm hover:underline mt-auto group/link">
+                            Leer más
+                            <svg class="w-4 h-4 ml-1 transform group-hover/link:translate-x-1 transition-transform"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
 
             </div>
-        </div>
-    </section>
 
-    <!-- Footer (Same as index) -->
-    <footer class="bg-white border-t border-gray-200">
+            <div class="mt-16 flex justify-center">
+                <nav class="inline-flex rounded-md shadow-sm isolate" aria-label="Pagination">
+                    <a href="#"
+                        class="relative inline-flex items-center rounded-l-md px-4 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                        <span class="sr-only">Previous</span>
+                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-current="page"
+                        class="relative z-10 inline-flex items-center bg-blue-900 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">1</a>
+                    <a href="#"
+                        class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">2</a>
+                    <a href="#"
+                        class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">3</a>
+                    <a href="#"
+                        class="relative inline-flex items-center rounded-r-md px-4 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                        <span class="sr-only">Next</span>
+                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-auto">
         <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
             <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
                 <div class="sm:col-span-2">
                     <a href="/" aria-label="Go home" title="Company" class="inline-flex items-center">
-                        <!-- Reuse logo svg or img here if needed, stripping specific classes if broken -->
                         <svg class="w-8 text-blue-900" viewBox="0 0 24 24" stroke-linejoin="round" stroke-width="2"
                             stroke-linecap="round" stroke-miterlimit="10" stroke="currentColor" fill="none">
                             <rect x="3" y="1" width="7" height="12"></rect>
@@ -343,7 +453,7 @@
                     </div>
                     <div class="flex">
                         <p class="mr-1 text-gray-800">Email:</p>
-                        <a href="mailto:info@lorem.mail" aria-label="Our email" title="Our email"
+                        <a href="mailto:info@capitania.gob" aria-label="Our email" title="Our email"
                             class="transition-colors duration-300 text-blue-900 hover:text-blue-700">info@capitania.gob</a>
                     </div>
                     <div class="flex">
