@@ -12,32 +12,19 @@
     [x-cloak] {
       display: none !important;
     }
+
+    /* Estilos para el submenu en hover sin JS */
+    .group:hover .group-hover\:block {
+      display: block;
+    }
   </style>
 </head>
 
 <body class="bg-gray-50 flex flex-col min-h-screen font-sans">
 
-  <div x-data="{ show: true }" x-show="show" class="bg-red-600 text-white px-4 py-2 relative shadow-md z-50 text-sm">
-    <div class="container mx-auto flex items-center justify-between">
-      <div class="flex items-center">
-        <svg class="w-5 h-5 mr-3 flex-shrink-0 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
-          </path>
-        </svg>
-        <span class="font-bold mr-2">AVISO:</span>
-        <span>Marejadas vigentes en costa norte hasta el 12 de Diciembre.</span>
-      </div>
-      <button @click="show = false" class="ml-4 hover:bg-red-700 rounded p-1 focus:outline-none">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <header class="bg-white text-gray-800 shadow-sm relative z-40">
+  <header class="bg-white text-gray-800 relative z-50">
     <div class="container mx-auto px-4 py-4">
+
       <div class="flex justify-center md:hidden mb-4">
         <div class="flex flex-col items-center space-y-1">
           <img
@@ -47,7 +34,7 @@
         </div>
       </div>
 
-      <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4 md:mb-0">
         <div class="flex flex-col items-center md:flex-row md:items-center md:space-x-4">
           <a href="index.html">
             <img src="image/capitania_web2.png" alt="Logo Capitanía" class="h-20 w-auto" />
@@ -56,9 +43,9 @@
 
         <div class="hidden md:flex flex-col items-end space-y-3">
           <div class="flex items-center">
-            <input type="text" placeholder="Búsqueda"
-              class="border border-r-0 border-gray-300 px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 rounded-l-md text-sm" />
-            <button class="bg-blue-800 text-white p-1.5 rounded-r-md hover:bg-blue-900 transition-colors">
+            <input type="text" placeholder="Búsqueda..."
+              class="border border-r-0 border-gray-300 px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-900 rounded-l-md text-sm" />
+            <button class="bg-blue-900 text-white p-1.5 rounded-r-md hover:bg-blue-800 transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd"
                   d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
@@ -69,10 +56,9 @@
         </div>
       </div>
 
-      <div class="md:hidden mt-6 border border-gray-300 rounded overflow-hidden flex items-stretch shadow-md">
+      <div class="md:hidden mt-2 border border-gray-300 rounded overflow-hidden flex items-stretch shadow-md">
         <input type="text" placeholder="Búsqueda" class="flex-grow px-3 py-3 text-lg focus:outline-none"
           style="border-radius: 0; border: none" />
-
         <button id="mobile-menu-button"
           class="bg-blue-900 text-white p-3 hover:bg-blue-800 w-16 flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -83,93 +69,146 @@
       </div>
     </div>
 
-    <nav id="mobile-menu" class="hidden md:hidden bg-blue-800 border-t border-red-600">
-      <ul class="flex flex-col py-2">
-        <li>
-          <a href="index.html" class="block bg-red-600 text-white font-semibold px-4 py-2 hover:bg-red-700">Inicio</a>
-        </li>
-        <li>
-          <a href="nosotros.html" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Sobre nosotros</a>
-        </li>
-        <li>
-          <a href="#tramites" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Servicios</a>
-        </li>
-        <li>
-          <a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Transparencia</a>
-        </li>
-        <li>
-          <a href="articulos.html" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Noticias</a>
-        </li>
-        <li>
-          <a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Aula Virtual</a>
-        </li>
-        <li>
-          <a href="#" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Reglamentos</a>
-        </li>
-        <li>
-          <a href="#contact" class="block text-white font-semibold px-4 py-2 hover:bg-blue-700">Contactos</a>
-        </li>
-      </ul>
-    </nav>
-
-    <nav class="hidden md:block bg-blue-900">
+    <nav class="hidden md:block bg-blue-900 text-white shadow-lg">
       <div class="container mx-auto">
-        <ul class="flex">
+        <ul class="flex flex-wrap items-center text-sm font-semibold">
+
           <li>
-            <a href="index.html"
-              class="block bg-red-600 text-white font-semibold px-5 py-3 transition-colors hover:bg-red-700">Inicio</a>
-          </li>
-          <li>
-            <a href="nosotros.html"
-              class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800 transition-colors">
-              <span>Sobre nosotros</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
-              </svg>
+            <a href="index.html" class="block bg-red-600 px-5 py-4 hover:bg-red-700 transition-colors">
+              INICIO
             </a>
           </li>
-          <li>
-            <a href="#tramites"
-              class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800 transition-colors">
-              <span>Servicios</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
+
+          <li class="group relative">
+            <a href="nosotros.html" class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
+              <span>ORGANIZACIÓN</span>
+              <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </a>
+            <ul
+              class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
+              <li><a href="nosotros.html" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Misión y
+                  Visión</a></li>
+              <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Alto Mando</a></li>
+              <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Direcciones
+                  Técnicas</a></li>
+              <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Transparencia</a></li>
+            </ul>
           </li>
-          <li>
-            <a href="#"
-              class="block text-white font-semibold px-5 py-3 hover:bg-blue-800 transition-colors">Transparencia</a>
-          </li>
-          <li>
-            <a href="articulos.html"
-              class="block text-white font-semibold px-5 py-3 hover:bg-blue-800 transition-colors">Noticias</a>
-          </li>
-          <li>
-            <a href="#" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800 transition-colors">Aula
-              Virtual</a>
-          </li>
-          <li>
-            <a href="#"
-              class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800 transition-colors">
-              <span>Reglamentos</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd" />
+
+          <li class="group relative">
+            <a href="#" class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
+              <span>SEGURIDAD MARÍTIMA</span>
+              <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </a>
+            <ul
+              class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
+              <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Operaciones (SAR)</a>
+              </li>
+              <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Policía Marítima</a>
+              </li>
+              <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Señalización Marítima</a></li>
+            </ul>
           </li>
+
+          <li class="group relative">
+            <a href="#services" class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
+              <span>SERVICIOS</span>
+              <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul
+              class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
+              <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Trámites Online</a>
+              </li>
+              <li><a href="#faq" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Gente de Mar</a>
+              </li>
+              <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Inspección de Naves</a>
+              </li>
+              <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Meteorología</a></li>
+            </ul>
+          </li>
+
+          <li class="group relative">
+            <a href="#" class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
+              <span>FORMACIÓN</span>
+              <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul
+              class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
+              <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Escuela Mercante</a>
+              </li>
+              <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Aula Virtual</a></li>
+            </ul>
+          </li>
+
+          <li class="group relative">
+            <a href="#" class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
+              <span>NORMATIVA</span>
+              <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul
+              class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
+              <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Leyes y Decretos</a>
+              </li>
+              <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Reglamentos</a></li>
+            </ul>
+          </li>
+
           <li>
-            <a href="#contact"
-              class="block text-white font-semibold px-5 py-3 hover:bg-blue-800 transition-colors">Contactos</a>
+            <a href="articulos.html" class="block px-4 py-4 hover:bg-blue-800">NOTICIAS</a>
           </li>
+
+          <li>
+            <a href="#contact" class="block px-4 py-4 hover:bg-blue-800">CONTACTO</a>
+          </li>
+
         </ul>
       </div>
+    </nav>
+
+    <nav id="mobile-menu" class="hidden md:hidden bg-blue-900 border-t border-red-600 text-white">
+      <ul class="flex flex-col py-2 space-y-1">
+        <li><a href="index.html" class="block bg-red-600 px-4 py-3 font-bold">INICIO</a></li>
+        <li x-data="{ open: false }">
+          <button @click="open = !open"
+            class="w-full text-left px-4 py-3 flex justify-between items-center hover:bg-blue-800">
+            <span>ORGANIZACIÓN</span>
+            <svg class="w-4 h-4" :class="{'rotate-180': open}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <ul x-show="open" class="bg-blue-800 pl-6">
+            <li><a href="nosotros.html" class="block px-4 py-2 text-sm hover:text-gray-300">Sobre Nosotros</a></li>
+            <li><a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Transparencia</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="block px-4 py-3 hover:bg-blue-800">SEGURIDAD MARÍTIMA</a></li>
+        <li x-data="{ open: false }">
+          <button @click="open = !open"
+            class="w-full text-left px-4 py-3 flex justify-between items-center hover:bg-blue-800">
+            <span>SERVICIOS</span>
+            <svg class="w-4 h-4" :class="{'rotate-180': open}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <ul x-show="open" class="bg-blue-800 pl-6">
+            <li><a href="#services" class="block px-4 py-2 text-sm hover:text-gray-300">Trámites Online</a></li>
+            <li><a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Meteorología</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="block px-4 py-3 hover:bg-blue-800">FORMACIÓN</a></li>
+        <li><a href="articulos.html" class="block px-4 py-3 hover:bg-blue-800">NOTICIAS</a></li>
+        <li><a href="#contact" class="block px-4 py-3 hover:bg-blue-800">CONTACTO</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -317,63 +356,6 @@
       </div>
     </section>
 
-    <section class="py-16 md:py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-12">Nuestra Misión Estratégica</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-auto md:h-96">
-            <img
-              src="https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="Seguridad"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            <div class="absolute inset-0 bg-gradient-to-t from-blue-900 via-transparent to-transparent opacity-90">
-            </div>
-            <div class="absolute bottom-0 left-0 p-8 text-left">
-              <div class="w-12 h-1 w-12 bg-yellow-400 mb-4"></div>
-              <h3 class="text-2xl font-bold text-white mb-2">Mares más Seguros</h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                Salvaguardamos la vida humana en el mar mediante operaciones SAR y fiscalización rigurosa.
-              </p>
-            </div>
-          </div>
-
-          <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-auto md:h-96">
-            <img
-              src="https://images.pexels.com/photos/3354346/pexels-photo-3354346.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="Limpios"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            <div class="absolute inset-0 bg-gradient-to-t from-teal-900 via-transparent to-transparent opacity-90">
-            </div>
-            <div class="absolute bottom-0 left-0 p-8 text-left">
-              <div class="w-12 h-1 w-12 bg-teal-400 mb-4"></div>
-              <h3 class="text-2xl font-bold text-white mb-2">Mares más Limpios</h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                Protegemos el medio ambiente acuático combatiendo la contaminación y preservando recursos.
-              </p>
-            </div>
-          </div>
-
-          <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-auto md:h-96">
-            <img src="https://images.pexels.com/photos/896656/pexels-photo-896656.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="Conocidos"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            <div class="absolute inset-0 bg-gradient-to-t from-indigo-900 via-transparent to-transparent opacity-90">
-            </div>
-            <div class="absolute bottom-0 left-0 p-8 text-left">
-              <div class="w-12 h-1 w-12 bg-indigo-400 mb-4"></div>
-              <h3 class="text-2xl font-bold text-white mb-2">Mares más Conocidos</h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                Investigación científica e hidrografía para garantizar una navegación segura y eficiente.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="direcciones" class="py-16 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
@@ -392,11 +374,7 @@
             <h3 class="text-xl font-bold text-gray-900 mb-3">Comando Naval</h3>
             <p class="text-gray-600 text-sm mb-6">Autoridad máxima en la jurisdicción, coordinación de medios y
               personal.</p>
-            <a href="#" class="text-blue-700 font-semibold text-sm hover:underline flex items-center">
-              Saber más <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
+            <a href="#" class="text-blue-700 font-semibold text-sm hover:underline flex items-center">Saber más</a>
           </div>
           <div
             class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1">
@@ -405,11 +383,7 @@
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3">Gente de Mar</h3>
             <p class="text-gray-600 text-sm mb-6">Emisión de licencias, libretas de embarco y cursos de formación.</p>
-            <a href="#" class="text-blue-700 font-semibold text-sm hover:underline flex items-center">
-              Saber más <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
+            <a href="#" class="text-blue-700 font-semibold text-sm hover:underline flex items-center">Saber más</a>
           </div>
           <div
             class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1">
@@ -419,11 +393,7 @@
             <h3 class="text-xl font-bold text-gray-900 mb-3">Inspección de Naves</h3>
             <p class="text-gray-600 text-sm mb-6">Estado Rector del Puerto, revisiones de seguridad y cumplimiento de
               convenios.</p>
-            <a href="#" class="text-blue-700 font-semibold text-sm hover:underline flex items-center">
-              Saber más <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
+            <a href="#" class="text-blue-700 font-semibold text-sm hover:underline flex items-center">Saber más</a>
           </div>
           <div
             class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1">
@@ -433,11 +403,7 @@
             <h3 class="text-xl font-bold text-gray-900 mb-3">Hidrografía</h3>
             <p class="text-gray-600 text-sm mb-6">Cartografía náutica, señalización marítima y avisos a los navegantes.
             </p>
-            <a href="#" class="text-blue-700 font-semibold text-sm hover:underline flex items-center">
-              Saber más <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
+            <a href="#" class="text-blue-700 font-semibold text-sm hover:underline flex items-center">Saber más</a>
           </div>
           <div
             class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1">
@@ -446,11 +412,7 @@
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3">Escuela Mercante</h3>
             <p class="text-gray-600 text-sm mb-6">Capacitación y perfeccionamiento profesional bajo estándares OMI.</p>
-            <a href="#" class="text-blue-700 font-semibold text-sm hover:underline flex items-center">
-              Saber más <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
+            <a href="#" class="text-blue-700 font-semibold text-sm hover:underline flex items-center">Saber más</a>
           </div>
           <div
             class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1">
@@ -460,11 +422,7 @@
             <h3 class="text-xl font-bold text-gray-900 mb-3">Operaciones</h3>
             <p class="text-gray-600 text-sm mb-6">Control de tráfico marítimo, búsqueda y salvamento, y policía
               marítima.</p>
-            <a href="#" class="text-blue-700 font-semibold text-sm hover:underline flex items-center">
-              Saber más <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
+            <a href="#" class="text-blue-700 font-semibold text-sm hover:underline flex items-center">Saber más</a>
           </div>
         </div>
       </div>
@@ -484,7 +442,6 @@
             </svg>
           </a>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <article
             class="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100 flex flex-col h-full group">
@@ -499,10 +456,8 @@
               <div class="text-xs text-gray-500 mb-2">28 Nov 2025</div>
               <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight group-hover:text-blue-700">Reelección en el
                 Consejo de la OMI</h3>
-              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                Nuestro país mantiene su estatus internacional, confirmando el compromiso con la seguridad marítima
-                global.
-              </p>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">Nuestro país mantiene su estatus internacional,
+                confirmando el compromiso con la seguridad marítima global.</p>
             </div>
           </article>
           <article
@@ -518,9 +473,8 @@
               <div class="text-xs text-gray-500 mb-2">25 Nov 2025</div>
               <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight group-hover:text-blue-700">Operativo de
                 Limpieza de Playas</h3>
-              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                Exitosa jornada de recuperación del borde costero con la participación de voluntarios y personal naval.
-              </p>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">Exitosa jornada de recuperación del borde costero con
+                la participación de voluntarios y personal naval.</p>
             </div>
           </article>
           <article
@@ -535,9 +489,8 @@
               <div class="text-xs text-gray-500 mb-2">20 Nov 2025</div>
               <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight group-hover:text-blue-700">Balance Temporada
                 Estival</h3>
-              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                Autoridad Marítima presenta las estadísticas de rescates y medidas preventivas para el próximo verano.
-              </p>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">Autoridad Marítima presenta las estadísticas de
+                rescates y medidas preventivas para el próximo verano.</p>
             </div>
           </article>
         </div>
@@ -574,8 +527,7 @@
       </div>
     </section>
 
-    <section id="contact" class="py-12 bg-white">
-    </section>
+    <section id="contact"></section>
 
   </main>
 
@@ -594,9 +546,9 @@
             <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Capitanía</span>
           </a>
           <div class="mt-6 lg:max-w-sm">
-            <p class="text-sm text-gray-800">
-              Comprometidos con la seguridad marítima y la protección de nuestros mares.
+            <p class="text-sm text-gray-800">Comprometidos con la seguridad marítima y la protección de nuestros mares.
             </p>
+            <p class="mt-4 text-sm text-gray-800">Brindando servicios de calidad a la comunidad náutica.</p>
           </div>
         </div>
         <div class="space-y-2 text-sm">
@@ -611,21 +563,23 @@
             <a href="mailto:info@capitania.gob"
               class="transition-colors duration-300 text-blue-900 hover:text-blue-700">info@capitania.gob</a>
           </div>
+          <div class="flex">
+            <p class="mr-1 text-gray-800">Dirección:</p>
+            <a href="#" class="transition-colors duration-300 text-blue-900 hover:text-blue-700">Calle del Puerto, No.
+              1</a>
+          </div>
         </div>
         <div>
           <span class="text-base font-bold tracking-wide text-gray-900">Social</span>
           <div class="flex items-center mt-1 space-x-3">
-            <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-blue-900">
-              <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+            <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-blue-900"><svg
+                viewBox="0 0 24 24" fill="currentColor" class="h-5">
                 <path
                   d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z">
                 </path>
-              </svg>
-            </a>
+              </svg></a>
           </div>
-          <p class="mt-4 text-sm text-gray-500">
-            © Copyright 2025 Capitanía de Puerto.
-          </p>
+          <p class="mt-4 text-sm text-gray-500">© Copyright 2025 Capitanía de Puerto.</p>
         </div>
       </div>
     </div>
