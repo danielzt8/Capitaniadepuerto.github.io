@@ -448,6 +448,139 @@
       </div>
     </section>
 
+    <section class="py-16 bg-white border-t border-gray-100" x-data="{ imgModal: false, imgModalSrc: '' }">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="text-blue-600 font-semibold tracking-wide uppercase text-sm">Multimedia</span>
+          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mt-2">Galería de Imágenes</h2>
+          <p class="mt-4 text-gray-600">Un vistazo a nuestras operaciones y actividades diarias.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div class="group relative overflow-hidden rounded-xl cursor-pointer h-64 md:h-48"
+            @click="imgModal = true; imgModalSrc = 'https://images.pexels.com/photos/1033621/pexels-photo-1033621.jpeg'">
+            <img
+              src="https://images.pexels.com/photos/1033621/pexels-photo-1033621.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Operaciones"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-xl cursor-pointer h-64 md:h-48"
+            @click="imgModal = true; imgModalSrc = 'https://images.pexels.com/photos/799091/pexels-photo-799091.jpeg'">
+            <img src="https://images.pexels.com/photos/799091/pexels-photo-799091.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Inspección"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-xl cursor-pointer h-64 md:h-48"
+            @click="imgModal = true; imgModalSrc = 'https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg'">
+            <img src="https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Puerto" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-xl cursor-pointer h-64 md:h-48"
+            @click="imgModal = true; imgModalSrc = 'https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg'">
+            <img
+              src="https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Rescate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-xl cursor-pointer h-64 md:h-48 hidden md:block"
+            @click="imgModal = true; imgModalSrc = 'https://images.pexels.com/photos/68737/cruise-ship-holidays-cruise-vacation-68737.jpeg'">
+            <img
+              src="https://images.pexels.com/photos/68737/cruise-ship-holidays-cruise-vacation-68737.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Crucero" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-xl cursor-pointer h-64 md:h-48 hidden md:block"
+            @click="imgModal = true; imgModalSrc = 'https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg'">
+            <img
+              src="https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Mar" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-xl cursor-pointer h-64 md:h-48 hidden lg:block"
+            @click="imgModal = true; imgModalSrc = 'https://images.pexels.com/photos/3354346/pexels-photo-3354346.jpeg'">
+            <img
+              src="https://images.pexels.com/photos/3354346/pexels-photo-3354346.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Playa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-xl cursor-pointer h-64 md:h-48 hidden lg:block"
+            @click="imgModal = true; imgModalSrc = 'https://images.pexels.com/photos/896656/pexels-photo-896656.jpeg'">
+            <img src="https://images.pexels.com/photos/896656/pexels-photo-896656.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Investigación"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div
+              class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div x-show="imgModal" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click.away="imgModal = false"
+        class="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4" x-cloak>
+
+        <div class="relative max-w-5xl w-full h-full flex items-center justify-center">
+          <img :src="imgModalSrc" class="max-h-full max-w-full rounded shadow-2xl" alt="Imagen ampliada">
+          <button @click="imgModal = false"
+            class="absolute top-4 right-4 text-white hover:text-gray-300 focus:outline-none bg-black/50 rounded-full p-2">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section class="bg-gray-50 py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
         <h2 class="text-2xl font-bold text-center text-gray-900">Enlaces de Interés</h2>
