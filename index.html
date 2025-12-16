@@ -72,6 +72,7 @@
       <div class="container mx-auto">
         <ul class="flex flex-wrap items-center text-sm font-semibold">
           <li><a href="index.html" class="block bg-red-600 px-5 py-4 hover:bg-red-700 transition-colors">INICIO</a></li>
+
           <li class="group relative">
             <a href="nosotros.html" class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
               <span>ORGANIZACIÓN</span>
@@ -81,14 +82,13 @@
             </a>
             <ul
               class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
-              <li><a href="nosotros.html" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Sobre
-                  Nosotros</a></li>
               <li><a href="nosotros.html" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Misión y
                   Visión</a></li>
               <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Alto Mando</a></li>
               <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Direcciones Técnicas</a></li>
             </ul>
           </li>
+
           <li class="group relative">
             <a href="#" class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
               <span>SEGURIDAD MARÍTIMA</span>
@@ -105,6 +105,7 @@
               <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Señalización Marítima</a></li>
             </ul>
           </li>
+
           <li class="group relative">
             <a href="#tramites" class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
               <span>SERVICIOS</span>
@@ -120,6 +121,7 @@
               <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Meteorología</a></li>
             </ul>
           </li>
+
           <li class="group relative">
             <a href="#" class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
               <span>FORMACIÓN</span>
@@ -134,6 +136,7 @@
               <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Aula Virtual</a></li>
             </ul>
           </li>
+
           <li><a href="articulos.html" class="block px-4 py-4 hover:bg-blue-800">NOTICIAS</a></li>
           <li><a href="#contact" class="block px-4 py-4 hover:bg-blue-800">CONTACTO</a></li>
         </ul>
@@ -182,6 +185,7 @@
         class="w-full h-full relative overflow-hidden">
         <div class="h-full transition-transform duration-700 ease-out flex"
           :style="`transform: translateX(-${activeSlide * 100}%)`">
+
           <div class="min-w-full h-full relative">
             <img src="https://images.pexels.com/photos/275637/pexels-photo-275637.jpeg" alt="Puerto"
               class="w-full h-full object-cover opacity-60">
@@ -231,6 +235,7 @@
             </div>
           </div>
         </div>
+
         <button @click="activeSlide = (activeSlide - 1 + slides) % slides; clearInterval(timer)"
           class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full backdrop-blur-sm transition-all hidden md:block">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -253,7 +258,7 @@
       </div>
     </section>
 
-    <section id="tramites" class="relative -mt-6 z-30 px-4">
+    <section id="tramites" class="relative -mt-10 z-30 px-4">
       <div class="max-w-7xl mx-auto">
         <div
           class="bg-white rounded-xl shadow-xl border-t-4 border-yellow-500 grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100 overflow-hidden">
@@ -304,6 +309,140 @@
             <h3 class="font-bold text-gray-900 group-hover:text-blue-900">Meteorología</h3>
             <p class="text-xs text-gray-500 mt-1">Pronósticos</p>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-white border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-blue-900 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                  </path>
+                </svg>
+                Estado de Puertos
+              </h3>
+              <span class="text-xs font-semibold bg-green-100 text-green-800 px-2 py-1 rounded-full">Actualizado: Hoy
+                09:00 AM</span>
+            </div>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center bg-white p-3 rounded-lg border border-gray-100">
+                <span class="font-medium text-gray-700">Puerto de Haina</span>
+                <span class="flex items-center text-sm font-bold text-green-600"><span
+                    class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></span>ABIERTO</span>
+              </div>
+              <div class="flex justify-between items-center bg-white p-3 rounded-lg border border-gray-100">
+                <span class="font-medium text-gray-700">Puerto Caucedo</span>
+                <span class="flex items-center text-sm font-bold text-green-600"><span
+                    class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></span>ABIERTO</span>
+              </div>
+              <div class="flex justify-between items-center bg-white p-3 rounded-lg border border-gray-100">
+                <span class="font-medium text-gray-700">Puerto Plata</span>
+                <span class="flex items-center text-sm font-bold text-yellow-600"><span
+                    class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>RESTRINGIDO</span>
+              </div>
+              <div class="mt-4 text-center">
+                <a href="#" class="text-sm text-blue-700 font-semibold hover:underline">Ver reporte completo SITPORT
+                  &rarr;</a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-blue-900 rounded-xl p-6 text-white shadow-lg relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-700 rounded-full opacity-50"></div>
+            <h3 class="text-xl font-bold flex items-center mb-4 relative z-10">
+              <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+              </svg>
+              Pronóstico Marítimo
+            </h3>
+            <div class="flex items-center justify-between mb-6 relative z-10">
+              <div>
+                <p class="text-4xl font-bold">29°C</p>
+                <p class="text-blue-200">Costa Sur / Santo Domingo</p>
+              </div>
+              <svg class="w-16 h-16 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                </path>
+              </svg>
+            </div>
+            <div class="grid grid-cols-2 gap-4 text-sm relative z-10">
+              <div class="bg-blue-800/50 p-3 rounded-lg">
+                <p class="text-blue-200 text-xs">Oleaje</p>
+                <p class="font-bold">4 - 6 Pies</p>
+              </div>
+              <div class="bg-blue-800/50 p-3 rounded-lg">
+                <p class="text-blue-200 text-xs">Viento</p>
+                <p class="font-bold">NE 15 Nudos</p>
+              </div>
+            </div>
+            <div class="mt-5 text-center relative z-10">
+              <a href="#"
+                class="inline-block bg-white text-blue-900 text-xs font-bold px-4 py-2 rounded-full hover:bg-gray-100 transition-colors">
+                Descargar Boletín PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-12">Nuestra Misión Estratégica</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-auto md:h-96">
+            <img
+              src="https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Seguridad"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-900 via-transparent to-transparent opacity-90">
+            </div>
+            <div class="absolute bottom-0 left-0 p-8 text-left">
+              <div class="w-12 h-1 w-12 bg-yellow-400 mb-4"></div>
+              <h3 class="text-2xl font-bold text-white mb-2">Mares más Seguros</h3>
+              <p
+                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                Salvaguardamos la vida humana en el mar mediante operaciones SAR y fiscalización rigurosa.
+              </p>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-auto md:h-96">
+            <img
+              src="https://images.pexels.com/photos/3354346/pexels-photo-3354346.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Limpios"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-teal-900 via-transparent to-transparent opacity-90">
+            </div>
+            <div class="absolute bottom-0 left-0 p-8 text-left">
+              <div class="w-12 h-1 w-12 bg-teal-400 mb-4"></div>
+              <h3 class="text-2xl font-bold text-white mb-2">Mares más Limpios</h3>
+              <p
+                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                Protegemos el medio ambiente acuático combatiendo la contaminación y preservando recursos.
+              </p>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-auto md:h-96">
+            <img src="https://images.pexels.com/photos/896656/pexels-photo-896656.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Conocidos"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-indigo-900 via-transparent to-transparent opacity-90">
+            </div>
+            <div class="absolute bottom-0 left-0 p-8 text-left">
+              <div class="w-12 h-1 w-12 bg-indigo-400 mb-4"></div>
+              <h3 class="text-2xl font-bold text-white mb-2">Mares más Conocidos</h3>
+              <p
+                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                Investigación científica e hidrografía para garantizar una navegación segura y eficiente.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -568,7 +707,6 @@
         x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click.away="imgModal = false"
         class="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4" x-cloak>
-
         <div class="relative max-w-5xl w-full h-full flex items-center justify-center">
           <img :src="imgModalSrc" class="max-h-full max-w-full rounded shadow-2xl" alt="Imagen ampliada">
           <button @click="imgModal = false"
@@ -581,6 +719,30 @@
       </div>
     </section>
 
+    <section class="py-16 bg-blue-900 text-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="p-4">
+            <div class="text-4xl md:text-5xl font-extrabold text-yellow-400 mb-2">150+</div>
+            <div class="text-sm md:text-base text-blue-100 font-medium">Operaciones SAR</div>
+          </div>
+          <div class="p-4">
+            <div class="text-4xl md:text-5xl font-extrabold text-yellow-400 mb-2">2.5k</div>
+            <div class="text-sm md:text-base text-blue-100 font-medium">Licencias Emitidas</div>
+          </div>
+          <div class="p-4">
+            <div class="text-4xl md:text-5xl font-extrabold text-yellow-400 mb-2">98%</div>
+            <div class="text-sm md:text-base text-blue-100 font-medium">Puertos Operativos</div>
+          </div>
+          <div class="p-4">
+            <div class="text-4xl md:text-5xl font-extrabold text-yellow-400 mb-2">24/7</div>
+            <div class="text-sm md:text-base text-blue-100 font-medium">Monitoreo Costero</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="bg-gray-50 py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
         <h2 class="text-2xl font-bold text-center text-gray-900">Enlaces de Interés</h2>
@@ -588,38 +750,38 @@
       </div>
 
       <div class="max-w-7xl mx-auto px-4 relative" x-data="{
-            index: 0,
-            timer: null,
-            items: [
-                { name: 'Armada', img: 'https://armada.mil.do/wp-content/uploads/2024/04/logo-1-1.png' },
-                { name: 'Gobierno', img: 'https://gobernacionsancristobal.gob.do/wp-content/uploads/2023/11/sl-rd-logo.png' },
-                { name: 'Onamet', img: 'https://centroclima.org/wp-content/uploads/2016/02/onamet-logo-e1467676042895.png' },
-                { name: 'Emergencias', img: 'https://i0.wp.com/pinceldigital.do/wp-content/uploads/2023/07/IMG_8206.png' },
-                { name: 'Defensa', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Emblem_of_the_Dominican_Armed_Forces.svg/1200px-Emblem_of_the_Dominican_Armed_Forces.svg.png' },
-                { name: 'Portuaria', img: 'https://www.portuaria.gob.do/wp-content/uploads/2020/08/logo-apordom.png' },
-                { name: 'COE', img: 'https://coe.gob.do/wp-content/uploads/2019/07/coe-logo.png' }
-            ],
-            get visibleItems() {
-                if (window.innerWidth >= 1024) return 4;
-                if (window.innerWidth >= 768) return 3;
-                return 1;
-            },
-            get maxIndex() {
-                return this.items.length - this.visibleItems;
-            },
-            next() {
-                this.index = (this.index >= this.maxIndex) ? 0 : this.index + 1;
-            },
-            prev() {
-                this.index = (this.index <= 0) ? this.maxIndex : this.index - 1;
-            },
-            start() {
-                this.timer = setInterval(() => { this.next() }, 3000);
-            },
-            stop() {
-                clearInterval(this.timer);
-            }
-        }" x-init="start()" @mouseenter="stop()" @mouseleave="start()">
+                    index: 0,
+                    timer: null,
+                    items: [
+                        { name: 'Armada', img: 'https://armada.mil.do/wp-content/uploads/2024/04/logo-1-1.png' },
+                        { name: 'Gobierno', img: 'https://gobernacionsancristobal.gob.do/wp-content/uploads/2023/11/sl-rd-logo.png' },
+                        { name: 'Onamet', img: 'https://centroclima.org/wp-content/uploads/2016/02/onamet-logo-e1467676042895.png' },
+                        { name: 'Emergencias', img: 'https://i0.wp.com/pinceldigital.do/wp-content/uploads/2023/07/IMG_8206.png' },
+                        { name: 'Defensa', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Emblem_of_the_Dominican_Armed_Forces.svg/1200px-Emblem_of_the_Dominican_Armed_Forces.svg.png' },
+                        { name: 'Portuaria', img: 'https://www.portuaria.gob.do/wp-content/uploads/2020/08/logo-apordom.png' },
+                        { name: 'COE', img: 'https://coe.gob.do/wp-content/uploads/2019/07/coe-logo.png' }
+                    ],
+                    get visibleItems() {
+                        if (window.innerWidth >= 1024) return 4;
+                        if (window.innerWidth >= 768) return 3;
+                        return 1;
+                    },
+                    get maxIndex() {
+                        return this.items.length - this.visibleItems;
+                    },
+                    next() {
+                        this.index = (this.index >= this.maxIndex) ? 0 : this.index + 1;
+                    },
+                    prev() {
+                        this.index = (this.index <= 0) ? this.maxIndex : this.index - 1;
+                    },
+                    start() {
+                        this.timer = setInterval(() => { this.next() }, 3000);
+                    },
+                    stop() {
+                        clearInterval(this.timer);
+                    }
+                }" x-init="start()" @mouseenter="stop()" @mouseleave="start()">
 
         <div class="overflow-hidden relative">
           <div class="flex transition-transform duration-500 ease-in-out"
