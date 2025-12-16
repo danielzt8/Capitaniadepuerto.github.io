@@ -1,29 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noticias - Capitanía de Puerto</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>Noticias y Avisos - Capitanía de Puerto</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <style>
-        [x-cloak] {
-            display: none !important;
+        /* Estilos para simular la fuente Serif del diseño original */
+        .font-serif-display {
+            font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
-        .group:hover .group-hover\:block {
-            display: block;
+        [x-cloak] {
+            display: none !important;
         }
     </style>
 </head>
 
-<body class="bg-gray-50 flex flex-col min-h-screen font-sans">
+<body class="bg-gray-50 font-sans text-gray-800">
 
-    <header class="bg-white text-gray-800 relative z-50">
+    <header class="bg-white shadow-sm relative z-50">
         <div class="container mx-auto px-4 py-4">
-
             <div class="flex justify-center md:hidden mb-4">
                 <div class="flex flex-col items-center space-y-1">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_the_Dominican_Republic.svg/1200px-Coat_of_arms_of_the_Dominican_Republic.svg.png"
@@ -32,7 +34,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4 md:mb-0">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center">
                 <div class="flex flex-col items-center md:flex-row md:items-center md:space-x-4">
                     <a href="index.html">
                         <img src="image/capitania_web2.png" alt="Logo Capitanía" class="h-20 w-auto" />
@@ -41,496 +43,426 @@
 
                 <div class="hidden md:flex flex-col items-end space-y-3">
                     <div class="flex items-center">
-                        <input type="text" placeholder="Buscar noticias..."
-                            class="border border-r-0 border-gray-300 px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-900 rounded-l-md text-sm" />
-                        <button class="bg-blue-900 text-white p-1.5 rounded-r-md hover:bg-blue-800 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                    clip-rule="evenodd" />
-                            </svg>
+                        <input type="text" placeholder="Búsqueda..."
+                            class="border border-r-0 border-gray-300 px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-900" />
+                        <button class="bg-blue-900 text-white p-2 hover:bg-blue-800">
+                            <ion-icon name="search-outline" class="text-xl"></ion-icon>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div class="md:hidden mt-2 border border-gray-300 rounded overflow-hidden flex items-stretch shadow-md">
+            <div class="md:hidden mt-6 border border-gray-300 rounded overflow-hidden flex items-stretch shadow-md">
                 <input type="text" placeholder="Búsqueda" class="flex-grow px-3 py-3 text-lg focus:outline-none"
                     style="border-radius: 0; border: none" />
                 <button id="mobile-menu-button"
                     class="bg-blue-900 text-white p-3 hover:bg-blue-800 w-16 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
+                    <ion-icon name="menu-outline" class="text-2xl"></ion-icon>
                 </button>
             </div>
         </div>
 
-        <nav class="hidden md:block bg-blue-900 text-white shadow-lg">
+        <nav id="mobile-menu" class="hidden md:hidden bg-blue-900 border-t border-red-600">
+            <ul class="flex flex-col py-2">
+                <li><a href="index.html"
+                        class="block bg-red-600 text-white font-semibold px-4 py-2 hover:bg-red-700">INICIO</a></li>
+                <li><a href="nosotros.html"
+                        class="block text-white font-semibold px-4 py-2 hover:bg-blue-800">ORGANIZACIÓN</a></li>
+                <li><a href="index.html#tramites"
+                        class="block text-white font-semibold px-4 py-2 hover:bg-blue-800">SERVICIOS</a></li>
+                <li><a href="articulos.html"
+                        class="block text-white font-semibold px-4 py-2 hover:bg-blue-800">NOTICIAS</a></li>
+                <li><a href="index.html#contact"
+                        class="block text-white font-semibold px-4 py-2 hover:bg-blue-800">CONTACTOS</a></li>
+            </ul>
+        </nav>
+
+        <nav class="hidden md:block bg-blue-900">
             <div class="container mx-auto">
-                <ul class="flex flex-wrap items-center text-sm font-semibold">
+                <ul class="flex">
                     <li><a href="index.html"
-                            class="block bg-red-600 px-5 py-4 hover:bg-red-700 transition-colors">INICIO</a></li>
+                            class="block bg-red-600 text-white font-semibold px-5 py-3 hover:bg-red-700 transition-colors">INICIO</a>
+                    </li>
 
                     <li class="group relative">
                         <a href="nosotros.html"
-                            class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
+                            class="flex items-center space-x-1 text-white font-semibold px-5 py-3 hover:bg-blue-800 cursor-pointer">
                             <span>ORGANIZACIÓN</span>
-                            <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
+                            <ion-icon name="chevron-down-outline" class="text-sm"></ion-icon>
                         </a>
                         <ul
                             class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
                             <li><a href="nosotros.html"
                                     class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Misión y
                                     Visión</a></li>
-                            <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Alto
-                                    Mando</a></li>
-                            <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Direcciones Técnicas</a></li>
+                            <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Alto Mando</a></li>
                         </ul>
                     </li>
 
-                    <li class="group relative">
-                        <a href="#" class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
-                            <span>SEGURIDAD MARÍTIMA</span>
-                            <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </a>
-                        <ul
-                            class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
-                            <li><a href="#"
-                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Operaciones
-                                    (SAR)</a></li>
-                            <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Policía
-                                    Marítima</a></li>
-                            <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Señalización Marítima</a></li>
-                        </ul>
+                    <li><a href="#" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">SEGURIDAD</a>
                     </li>
-
-                    <li class="group relative">
-                        <a href="index.html#tramites"
-                            class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
-                            <span>SERVICIOS</span>
-                            <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </a>
-                        <ul
-                            class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
-                            <li><a href="index.html#tramites"
-                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Trámites
-                                    Online</a></li>
-                            <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Gente de
-                                    Mar</a></li>
-                            <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Meteorología</a></li>
-                        </ul>
+                    <li><a href="index.html#tramites"
+                            class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">SERVICIOS</a></li>
+                    <li><a href="#" class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">FORMACIÓN</a>
                     </li>
-
-                    <li class="group relative">
-                        <a href="#" class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
-                            <span>FORMACIÓN</span>
-                            <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </a>
-                        <ul
-                            class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
-                            <li><a href="#" class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Escuela
-                                    Mercante</a></li>
-                            <li><a href="#" class="block px-4 py-3 hover:bg-gray-100">Aula Virtual</a></li>
-                        </ul>
+                    <li><a href="articulos.html"
+                            class="block text-white font-semibold px-5 py-3 hover:bg-blue-800 bg-blue-800/50">NOTICIAS</a>
                     </li>
-
-                    <li><a href="articulos.html" class="block px-4 py-4 hover:bg-blue-800 bg-blue-800/50">NOTICIAS</a>
-                    </li>
-                    <li><a href="index.html#contact" class="block px-4 py-4 hover:bg-blue-800">CONTACTO</a></li>
+                    <li><a href="index.html#contact"
+                            class="block text-white font-semibold px-5 py-3 hover:bg-blue-800">CONTACTO</a></li>
                 </ul>
             </div>
         </nav>
-
-        <nav id="mobile-menu" class="hidden md:hidden bg-blue-900 border-t border-red-600 text-white">
-            <ul class="flex flex-col py-2 space-y-1">
-                <li><a href="index.html" class="block bg-red-600 px-4 py-3 font-bold">INICIO</a></li>
-                <li x-data="{ open: false }">
-                    <button @click="open = !open"
-                        class="w-full text-left px-4 py-3 flex justify-between items-center hover:bg-blue-800">
-                        <span>ORGANIZACIÓN</span>
-                        <svg class="w-4 h-4" :class="{'rotate-180': open}" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <ul x-show="open" class="bg-blue-800 pl-6">
-                        <li><a href="nosotros.html" class="block px-4 py-2 text-sm hover:text-gray-300">Sobre
-                                Nosotros</a></li>
-                    </ul>
-                </li>
-                <li x-data="{ open: false }">
-                    <button @click="open = !open"
-                        class="w-full text-left px-4 py-3 flex justify-between items-center hover:bg-blue-800">
-                        <span>SERVICIOS</span>
-                        <svg class="w-4 h-4" :class="{'rotate-180': open}" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <ul x-show="open" class="bg-blue-800 pl-6">
-                        <li><a href="index.html#tramites" class="block px-4 py-2 text-sm hover:text-gray-300">Trámites
-                                Online</a></li>
-                        <li><a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Meteorología</a></li>
-                    </ul>
-                </li>
-                <li><a href="articulos.html" class="block px-4 py-3 hover:bg-blue-800">NOTICIAS</a></li>
-                <li><a href="index.html#contact" class="block px-4 py-3 hover:bg-blue-800">CONTACTO</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section class="bg-blue-900 text-white py-16 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h1 class="text-4xl font-extrabold sm:text-5xl mb-4 tracking-tight">Avisos y Noticias</h1>
-            <p class="text-xl text-blue-100 max-w-3xl mx-auto font-light">
-                Mantente informado con los últimos comunicados, eventos y alertas de la Autoridad Marítima.
-            </p>
-        </div>
-    </section>
+    <main>
+        <section class="relative bg-blue-900 text-white py-20 px-4 md:px-8 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-600 opacity-90 z-10"></div>
 
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="absolute inset-0 mix-blend-overlay opacity-30 z-0" style="
+                background-image: url('https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg');
+                background-size: cover;
+                background-position: center;">
+            </div>
+
+            <div class="relative z-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-3/4 space-y-6">
+                    <span
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-sm font-bold tracking-wide uppercase">
+                        <ion-icon name="star" class="text-yellow-600"></ion-icon> Destacado Institucional
+                    </span>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif-display font-bold leading-tight">
+                        Nuevo Reglamento de
+                        <span class="text-yellow-400 italic">Navegación Costera</span> entra en vigor
+                    </h1>
+
+                    <p class="text-lg text-blue-100 leading-relaxed max-w-2xl">
+                        La Autoridad Marítima establece nuevas normativas obligatorias para fortalecer la seguridad de
+                        todas las embarcaciones menores y deportivas en el litoral.
+                    </p>
+
+                    <a href="articulo.html"
+                        class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-3 rounded-full transition-all shadow-lg hover:shadow-red-900/50">
+                        Leer comunicado oficial
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                </div>
+                <div class="md:w-1/4 hidden md:block"></div>
+            </div>
+        </section>
+
+        <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-12 border-b border-gray-200 pb-4">
+                <h2 class="text-3xl font-bold text-blue-900 font-serif-display">
+                    Últimas Noticias
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <article
-                    class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col group hover:-translate-y-1">
-                    <a href="articulo.html" class="block relative h-56 overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            src="https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                            alt="Navegación">
+                    class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col h-full">
+                    <div class="relative h-56 overflow-hidden">
+                        <a href="articulo.html">
+                            <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                src="https://images.pexels.com/photos/2090652/pexels-photo-2090652.jpeg?auto=compress&cs=tinysrgb&w=1260"
+                                alt="Muelle" />
+                        </a>
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity">
+                            class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-yellow-600 shadow-sm uppercase">
+                            Aviso
                         </div>
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded shadow-sm uppercase tracking-wide">Noticia</span>
-                        </div>
-                    </a>
+                    </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <div class="text-gray-500 text-xs mb-3 flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            27 de Marzo, 2025
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span class="flex items-center gap-1"><ion-icon name="calendar-clear-outline"></ion-icon> 25
+                                Mar, 2025</span>
                         </div>
-                        <a href="articulo.html" class="block mb-3">
+                        <a href="articulo.html">
                             <h3
-                                class="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors leading-tight">
-                                Nuevo Reglamento de Navegación Costera
+                                class="text-xl font-bold text-blue-900 mb-2 line-clamp-2 group-hover:text-red-600 transition-colors">
+                                Mantenimiento programado del Muelle Sur este fin de semana
                             </h3>
                         </a>
-                        <p class="text-gray-600 text-sm mb-4 flex-1 line-clamp-3">
-                            La Capitanía de Puerto anuncia nuevas medidas de seguridad obligatorias para todas las
-                            embarcaciones menores en la zona costera.
+                        <p class="text-gray-600 mb-4 line-clamp-3 flex-1">
+                            Se informa a los operadores portuarios sobre el cierre temporal por reparaciones técnicas en
+                            la estructura principal.
                         </p>
                         <a href="articulo.html"
-                            class="inline-flex items-center text-blue-700 font-bold text-sm hover:underline">
-                            Leer artículo completo
-                            <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
+                            class="inline-flex items-center text-teal-600 font-semibold hover:underline mt-auto">
+                            Leer más
+                            <ion-icon name="arrow-forward-outline" class="ml-1"></ion-icon>
                         </a>
                     </div>
                 </article>
 
                 <article
-                    class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col group hover:-translate-y-1">
-                    <a href="articulo.html" class="block relative h-56 overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            src="https://images.pexels.com/photos/2090652/pexels-photo-2090652.jpeg?auto=compress&cs=tinysrgb&w=600"
-                            alt="Mantenimiento Puerto">
+                    class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col h-full">
+                    <div class="relative h-56 overflow-hidden">
+                        <a href="articulo.html">
+                            <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                src="https://images.pexels.com/photos/1005417/pexels-photo-1005417.jpeg?auto=compress&cs=tinysrgb&w=1260"
+                                alt="Playa" />
+                        </a>
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity">
+                            class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-green-600 shadow-sm uppercase">
+                            Medio Ambiente
                         </div>
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded shadow-sm uppercase tracking-wide">Aviso</span>
-                        </div>
-                    </a>
+                    </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <div class="text-gray-500 text-xs mb-3 flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            25 de Marzo, 2025
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span class="flex items-center gap-1"><ion-icon name="calendar-clear-outline"></ion-icon> 20
+                                Mar, 2025</span>
                         </div>
-                        <a href="articulo.html" class="block mb-3">
+                        <a href="articulo.html">
                             <h3
-                                class="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors leading-tight">
-                                Mantenimiento Programado del Muelle Sur
+                                class="text-xl font-bold text-blue-900 mb-2 line-clamp-2 group-hover:text-red-600 transition-colors">
+                                Jornada Nacional de Limpieza de Playas y Costas
                             </h3>
                         </a>
-                        <p class="text-gray-600 text-sm mb-4 flex-1 line-clamp-3">
-                            Se informa a la comunidad marítima y operadores logísticos que el muelle principal estará
-                            cerrado por mantenimiento técnico.
+                        <p class="text-gray-600 mb-4 line-clamp-3 flex-1">
+                            Voluntarios y personal naval recolectaron más de 2 toneladas de desechos plásticos en el
+                            operativo.
                         </p>
                         <a href="articulo.html"
-                            class="inline-flex items-center text-blue-700 font-bold text-sm hover:underline">
-                            Leer artículo completo
-                            <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
+                            class="inline-flex items-center text-teal-600 font-semibold hover:underline mt-auto">
+                            Leer más
+                            <ion-icon name="arrow-forward-outline" class="ml-1"></ion-icon>
                         </a>
                     </div>
                 </article>
 
                 <article
-                    class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col group hover:-translate-y-1">
-                    <a href="articulo.html" class="block relative h-56 overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            src="https://images.pexels.com/photos/1005417/pexels-photo-1005417.jpeg?auto=compress&cs=tinysrgb&w=600"
-                            alt="Limpieza Costera">
+                    class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col h-full">
+                    <div class="relative h-56 overflow-hidden">
+                        <a href="articulo.html">
+                            <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                src="https://images.pexels.com/photos/2899709/pexels-photo-2899709.jpeg?auto=compress&cs=tinysrgb&w=1260"
+                                alt="Barco" />
+                        </a>
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity">
+                            class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-blue-900 shadow-sm uppercase">
+                            Operativo
                         </div>
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="bg-green-600 text-white text-xs font-bold px-3 py-1 rounded shadow-sm uppercase tracking-wide">Medio
-                                Ambiente</span>
-                        </div>
-                    </a>
+                    </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <div class="text-gray-500 text-xs mb-3 flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            20 de Marzo, 2025
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span class="flex items-center gap-1"><ion-icon name="calendar-clear-outline"></ion-icon> 15
+                                Mar, 2025</span>
                         </div>
-                        <a href="articulo.html" class="block mb-3">
+                        <a href="articulo.html">
                             <h3
-                                class="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors leading-tight">
-                                Jornada Nacional de Limpieza de Playas
+                                class="text-xl font-bold text-blue-900 mb-2 line-clamp-2 group-hover:text-red-600 transition-colors">
+                                Inicio de inspecciones anuales de seguridad marítima
                             </h3>
                         </a>
-                        <p class="text-gray-600 text-sm mb-4 flex-1 line-clamp-3">
-                            Únete al voluntariado en la gran jornada anual de recuperación de nuestro borde costero.
-                            ¡Cuidemos nuestros océanos!
+                        <p class="text-gray-600 mb-4 line-clamp-3 flex-1">
+                            La Dirección de Inspectores recuerda a los armadores verificar la vigencia de sus
+                            certificados.
                         </p>
                         <a href="articulo.html"
-                            class="inline-flex items-center text-blue-700 font-bold text-sm hover:underline">
-                            Leer artículo completo
-                            <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
+                            class="inline-flex items-center text-teal-600 font-semibold hover:underline mt-auto">
+                            Leer más
+                            <ion-icon name="arrow-forward-outline" class="ml-1"></ion-icon>
                         </a>
                     </div>
                 </article>
 
                 <article
-                    class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col group hover:-translate-y-1">
-                    <a href="articulo.html" class="block relative h-56 overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            src="https://images.pexels.com/photos/2899709/pexels-photo-2899709.jpeg?auto=compress&cs=tinysrgb&w=600"
-                            alt="Inspección">
+                    class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col h-full">
+                    <div class="relative h-56 overflow-hidden">
+                        <a href="articulo.html">
+                            <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                src="https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260"
+                                alt="Oleaje" />
+                        </a>
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity">
+                            class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-red-600 shadow-sm uppercase">
+                            Alerta
                         </div>
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded shadow-sm uppercase tracking-wide">Institucional</span>
-                        </div>
-                    </a>
+                    </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <div class="text-gray-500 text-xs mb-3 flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            15 de Marzo, 2025
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span class="flex items-center gap-1"><ion-icon name="calendar-clear-outline"></ion-icon> 10
+                                Mar, 2025</span>
                         </div>
-                        <a href="articulo.html" class="block mb-3">
+                        <a href="articulo.html">
                             <h3
-                                class="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors leading-tight">
-                                Inicio de Inspecciones Anuales de Seguridad
+                                class="text-xl font-bold text-blue-900 mb-2 line-clamp-2 group-hover:text-red-600 transition-colors">
+                                Aviso de fuerte oleaje en la costa norte
                             </h3>
                         </a>
-                        <p class="text-gray-600 text-sm mb-4 flex-1 line-clamp-3">
-                            Recordatorio obligatorio para armadores y propietarios: el ciclo de inspecciones técnicas
-                            comienza el próximo mes.
+                        <p class="text-gray-600 mb-4 line-clamp-3 flex-1">
+                            Se restringe la navegación para embarcaciones menores y actividades acuáticas por 48 horas.
                         </p>
                         <a href="articulo.html"
-                            class="inline-flex items-center text-blue-700 font-bold text-sm hover:underline">
-                            Leer artículo completo
-                            <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
+                            class="inline-flex items-center text-teal-600 font-semibold hover:underline mt-auto">
+                            Leer más
+                            <ion-icon name="arrow-forward-outline" class="ml-1"></ion-icon>
                         </a>
                     </div>
                 </article>
 
                 <article
-                    class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col group hover:-translate-y-1">
-                    <a href="articulo.html" class="block relative h-56 overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            src="https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600"
-                            alt="Tormenta">
+                    class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col h-full">
+                    <div class="relative h-56 overflow-hidden">
+                        <a href="articulo.html">
+                            <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                src="https://images.pexels.com/photos/3582455/pexels-photo-3582455.jpeg?auto=compress&cs=tinysrgb&w=1260"
+                                alt="Clase" />
+                        </a>
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity">
+                            class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-purple-600 shadow-sm uppercase">
+                            Formación
                         </div>
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow-sm uppercase tracking-wide">Alerta
-                                Meteorológica</span>
-                        </div>
-                    </a>
+                    </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <div class="text-gray-500 text-xs mb-3 flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            10 de Marzo, 2025
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span class="flex items-center gap-1"><ion-icon name="calendar-clear-outline"></ion-icon> 05
+                                Mar, 2025</span>
                         </div>
-                        <a href="articulo.html" class="block mb-3">
+                        <a href="articulo.html">
                             <h3
-                                class="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors leading-tight">
-                                Aviso de Fuerte Oleaje en Costa Norte
+                                class="text-xl font-bold text-blue-900 mb-2 line-clamp-2 group-hover:text-red-600 transition-colors">
+                                Apertura del curso básico de marinero de cubierta
                             </h3>
                         </a>
-                        <p class="text-gray-600 text-sm mb-4 flex-1 line-clamp-3">
-                            Se restringe la salida de embarcaciones menores y actividades deportivas debido a
-                            condiciones adversas pronosticadas.
+                        <p class="text-gray-600 mb-4 line-clamp-3 flex-1">
+                            La Escuela de Marina Mercante abre inscripciones para el nuevo ciclo académico.
                         </p>
                         <a href="articulo.html"
-                            class="inline-flex items-center text-blue-700 font-bold text-sm hover:underline">
-                            Leer artículo completo
-                            <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
+                            class="inline-flex items-center text-teal-600 font-semibold hover:underline mt-auto">
+                            Leer más
+                            <ion-icon name="arrow-forward-outline" class="ml-1"></ion-icon>
                         </a>
                     </div>
                 </article>
 
                 <article
-                    class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col group hover:-translate-y-1">
-                    <a href="articulo.html" class="block relative h-56 overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            src="https://images.pexels.com/photos/3582455/pexels-photo-3582455.jpeg?auto=compress&cs=tinysrgb&w=600"
-                            alt="Capacitación">
+                    class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col h-full">
+                    <div class="relative h-56 overflow-hidden">
+                        <a href="articulo.html">
+                            <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                src="https://images.pexels.com/photos/1931365/pexels-photo-1931365.jpeg?auto=compress&cs=tinysrgb&w=1260"
+                                alt="Reunión" />
+                        </a>
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity">
+                            class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-blue-900 shadow-sm uppercase">
+                            Institucional
                         </div>
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded shadow-sm uppercase tracking-wide">Formación</span>
-                        </div>
-                    </a>
+                    </div>
                     <div class="p-6 flex-1 flex flex-col">
-                        <div class="text-gray-500 text-xs mb-3 flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            5 de Marzo, 2025
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span class="flex items-center gap-1"><ion-icon name="calendar-clear-outline"></ion-icon> 01
+                                Mar, 2025</span>
                         </div>
-                        <a href="articulo.html" class="block mb-3">
+                        <a href="articulo.html">
                             <h3
-                                class="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors leading-tight">
-                                Curso Básico de Seguridad Marítima
+                                class="text-xl font-bold text-blue-900 mb-2 line-clamp-2 group-hover:text-red-600 transition-colors">
+                                Reunión estratégica con el sector pesquero
                             </h3>
                         </a>
-                        <p class="text-gray-600 text-sm mb-4 flex-1 line-clamp-3">
-                            Abiertas las inscripciones para pescadores y gente de mar que deseen certificar sus
-                            conocimientos en seguridad OMI.
+                        <p class="text-gray-600 mb-4 line-clamp-3 flex-1">
+                            Acuerdos para mejorar la sostenibilidad y seguridad en las zonas de pesca artesanal.
                         </p>
                         <a href="articulo.html"
-                            class="inline-flex items-center text-blue-700 font-bold text-sm hover:underline">
-                            Leer artículo completo
-                            <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
+                            class="inline-flex items-center text-teal-600 font-semibold hover:underline mt-auto">
+                            Leer más
+                            <ion-icon name="arrow-forward-outline" class="ml-1"></ion-icon>
                         </a>
                     </div>
                 </article>
 
             </div>
-        </div>
-    </section>
 
-    <footer class="bg-white border-t border-gray-200 mt-auto">
+            <div class="mt-16 flex justify-center">
+                <nav class="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                    <a href="#"
+                        class="relative inline-flex items-center px-4 py-3 rounded-l-lg border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                        <span class="sr-only">Anterior</span>
+                        <ion-icon name="chevron-back-outline" class="h-5 w-5"></ion-icon>
+                    </a>
+                    <a href="#" aria-current="page"
+                        class="z-10 bg-blue-900 border-blue-900 text-white relative inline-flex items-center px-5 py-3 border text-sm font-bold">1</a>
+                    <a href="#"
+                        class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-5 py-3 border text-sm font-medium">2</a>
+                    <a href="#"
+                        class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-5 py-3 border text-sm font-medium">3</a>
+                    <span
+                        class="relative inline-flex items-center px-4 py-3 border border-gray-300 bg-white text-sm font-medium text-gray-700">...</span>
+                    <a href="#"
+                        class="relative inline-flex items-center px-4 py-3 rounded-r-lg border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                        <span class="sr-only">Siguiente</span>
+                        <ion-icon name="chevron-forward-outline" class="h-5 w-5"></ion-icon>
+                    </a>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-900 text-white">
         <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
             <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
                 <div class="sm:col-span-2">
                     <a href="/" aria-label="Go home" title="Company" class="inline-flex items-center">
-                        <svg class="w-8 text-blue-900" viewBox="0 0 24 24" stroke-linejoin="round" stroke-width="2"
+                        <svg class="w-8 text-white" viewBox="0 0 24 24" stroke-linejoin="round" stroke-width="2"
                             stroke-linecap="round" stroke-miterlimit="10" stroke="currentColor" fill="none">
                             <rect x="3" y="1" width="7" height="12"></rect>
                             <rect x="3" y="17" width="7" height="6"></rect>
                             <rect x="14" y="1" width="7" height="6"></rect>
                             <rect x="14" y="11" width="7" height="12"></rect>
                         </svg>
-                        <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Capitanía</span>
+                        <div class="ml-2">
+                            <h1 class="text-2xl font-semibold uppercase">Capitanía de Puerto</h1>
+                            <h1 class="text-lg font-normal text-gray-300 -mt-1">Autoridad Marítima</h1>
+                        </div>
                     </a>
                     <div class="mt-6 lg:max-w-sm">
-                        <p class="text-sm text-gray-800">
-                            Comprometidos con la seguridad marítima y la protección de nuestros mares.
+                        <p class="text-sm text-gray-300">
+                            Comprometidos con la seguridad de la vida humana en el mar, la protección del medio ambiente
+                            acuático y la eficiencia de las operaciones portuarias.
                         </p>
                     </div>
                 </div>
                 <div class="space-y-2 text-sm">
-                    <p class="text-base font-bold tracking-wide text-gray-900">Contactos</p>
-                    <div class="flex">
-                        <p class="mr-1 text-gray-800">Teléfono:</p>
-                        <a href="tel:850-123-5021"
-                            class="transition-colors duration-300 text-blue-900 hover:text-blue-700">850-123-5021</a>
+                    <p class="text-base font-bold tracking-wide text-white">Contactos</p>
+                    <div class="flex items-start">
+                        <ion-icon name="call-outline" class="mr-2 mt-1"></ion-icon>
+                        <a href="tel:850-123-5021" class="transition-colors duration-300 hover:text-gray-300">
+                            (809) 555-0000
+                        </a>
                     </div>
-                    <div class="flex">
-                        <p class="mr-1 text-gray-800">Email:</p>
-                        <a href="mailto:info@capitania.gob"
-                            class="transition-colors duration-300 text-blue-900 hover:text-blue-700">info@capitania.gob</a>
+                    <div class="flex items-start">
+                        <ion-icon name="mail-outline" class="mr-2 mt-1"></ion-icon>
+                        <a href="mailto:info@capitania.gob.do"
+                            class="transition-colors duration-300 hover:text-gray-300">
+                            info@capitania.gob.do
+                        </a>
+                    </div>
+                    <div class="flex items-start">
+                        <ion-icon name="location-outline" class="mr-2 mt-1"></ion-icon>
+                        <span class="text-gray-300">
+                            Calle del Puerto No. 1, Santo Domingo, República Dominicana
+                        </span>
                     </div>
                 </div>
                 <div>
-                    <span class="text-base font-bold tracking-wide text-gray-900">Social</span>
-                    <div class="flex items-center mt-1 space-x-3">
-                        <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-blue-900"><svg
-                                viewBox="0 0 24 24" fill="currentColor" class="h-5">
-                                <path
-                                    d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z">
-                                </path>
-                            </svg></a>
+                    <span class="text-base font-bold tracking-wide text-white">Redes Sociales</span>
+                    <div class="flex items-center mt-3 space-x-3">
+                        <a href="#" class="text-gray-300 transition-colors duration-300 hover:text-white">
+                            <ion-icon name="logo-facebook" class="text-xl"></ion-icon>
+                        </a>
+                        <a href="#" class="text-gray-300 transition-colors duration-300 hover:text-white">
+                            <ion-icon name="logo-instagram" class="text-xl"></ion-icon>
+                        </a>
+                        <a href="#" class="text-gray-300 transition-colors duration-300 hover:text-white">
+                            <ion-icon name="logo-twitter" class="text-xl"></ion-icon>
+                        </a>
                     </div>
-                    <p class="mt-4 text-sm text-gray-500">© Copyright 2025 Capitanía de Puerto.</p>
+                    <p class="mt-4 text-sm text-gray-400">
+                        © 2025 Capitanía de Puerto. Todos los derechos reservados.
+                    </p>
                 </div>
             </div>
         </div>
