@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Descargas - Capitanía de Puerto</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        .group:hover .group-hover\:block {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen font-sans">
+
+    <header class="bg-white text-gray-800 relative z-50 border-b border-gray-200">
+        <div class="container mx-auto px-4 py-4">
+
+            <div class="flex justify-center md:hidden mb-4">
+                <div class="flex flex-col items-center space-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Coat_of_arms_of_the_Dominican_Republic.svg/1200px-Coat_of_arms_of_the_Dominican_Republic.svg.png"
+                        alt="Escudo República Dominicana" class="h-10 w-auto" />
+                    <span class="font-serif italic text-gray-700 text-sm">República Dominicana</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4 md:mb-0">
+                <div class="flex flex-col items-center md:flex-row md:items-center md:space-x-4">
+                    <a href="index.html">
+                        <img src="image/capitania_web2.png" alt="Logo Capitanía" class="h-20 w-auto" />
+                    </a>
+                </div>
+
+                <div class="hidden md:flex flex-col items-end space-y-3">
+                    <div class="flex items-center">
+                        <input type="text" placeholder="Búsqueda..."
+                            class="border border-r-0 border-gray-300 px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-900 rounded-l-md text-sm" />
+                        <button class="bg-blue-900 text-white p-1.5 rounded-r-md hover:bg-blue-800 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:hidden mt-2 border border-gray-300 rounded overflow-hidden flex items-stretch shadow-md">
+                <input type="text" placeholder="Búsqueda" class="flex-grow px-3 py-3 text-lg focus:outline-none"
+                    style="border-radius: 0; border: none" />
+                <button id="mobile-menu-button"
+                    class="bg-blue-900 text-white p-3 hover:bg-blue-800 w-16 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <nav class="hidden md:block bg-blue-900 text-white shadow-lg">
+            <div class="container mx-auto">
+                <ul class="flex flex-wrap items-center text-sm font-semibold">
+                    <li><a href="index.html"
+                            class="block bg-red-600 px-5 py-4 hover:bg-red-700 transition-colors">INICIO</a></li>
+
+                    <li class="group relative">
+                        <a href="nosotros.html"
+                            class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
+                            <span>ORGANIZACIÓN</span>
+                            <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </a>
+                        <ul
+                            class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
+                            <li><a href="nosotros.html"
+                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Sobre
+                                    Nosotros</a></li>
+                            <li><a href="nosotros.html"
+                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Misión y
+                                    Visión</a></li>
+                            <li><a href="404.html"
+                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Alto Mando</a>
+                            </li>
+                            <li><a href="404.html"
+                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Direcciones
+                                    Técnicas</a></li>
+                            <li><a href="404.html" class="block px-4 py-3 hover:bg-gray-100">Transparencia</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="group relative">
+                        <a href="404.html"
+                            class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
+                            <span>SEGURIDAD MARÍTIMA</span>
+                            <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </a>
+                        <ul
+                            class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
+                            <li><a href="404.html"
+                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Operaciones
+                                    (SAR)</a></li>
+                            <li><a href="404.html"
+                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Policía
+                                    Marítima</a></li>
+                            <li><a href="404.html" class="block px-4 py-3 hover:bg-gray-100">Señalización Marítima</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="group relative">
+                        <a href="index.html#tramites"
+                            class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
+                            <span>SERVICIOS</span>
+                            <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </a>
+                        <ul
+                            class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
+                            <li><a href="404.html"
+                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Trámites
+                                    Online</a></li>
+                            <li><a href="404.html"
+                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Gente de Mar</a>
+                            </li>
+                            <li><a href="404.html"
+                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Inspección de
+                                    Naves</a></li>
+                            <li><a href="404.html" class="block px-4 py-3 hover:bg-gray-100">Meteorología</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="group relative">
+                        <a href="404.html"
+                            class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
+                            <span>FORMACIÓN</span>
+                            <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </a>
+                        <ul
+                            class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
+                            <li><a href="404.html"
+                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Escuela
+                                    Mercante</a></li>
+                            <li><a href="404.html" class="block px-4 py-3 hover:bg-gray-100">Aula Virtual</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="group relative">
+                        <a href="404.html"
+                            class="flex items-center space-x-1 px-4 py-4 hover:bg-blue-800 cursor-pointer">
+                            <span>NORMATIVA</span>
+                            <svg class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </a>
+                        <ul
+                            class="absolute left-0 top-full w-56 bg-white text-gray-800 shadow-xl hidden group-hover:block border-t-4 border-red-600 z-50">
+                            <li><a href="404.html"
+                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Leyes y
+                                    Decretos</a></li>
+                            <li><a href="404.html"
+                                    class="block px-4 py-3 hover:bg-gray-100 border-b border-gray-100">Reglamentos</a>
+                            </li>
+                            <li><a href="404.html" class="block px-4 py-3 hover:bg-gray-100">Ordenanzas</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="articulos.html" class="block px-4 py-4 hover:bg-blue-800">NOTICIAS</a></li>
+                    <li><a href="contacto.html" class="block px-4 py-4 hover:bg-blue-800">CONTACTO</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav id="mobile-menu" class="hidden md:hidden bg-blue-900 border-t border-red-600 text-white">
+            <ul class="flex flex-col py-2 space-y-1">
+                <li><a href="index.html" class="block bg-red-600 px-4 py-3 font-bold">INICIO</a></li>
+                <li><a href="articulos.html" class="block px-4 py-3 hover:bg-blue-800">NOTICIAS</a></li>
+                <li><a href="contacto.html" class="block px-4 py-3 hover:bg-blue-800">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-16 px-4 overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-10 left-10 w-64 h-64 bg-yellow-400 rounded-full filter blur-3xl"></div>
+                <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-400 rounded-full filter blur-3xl"></div>
+            </div>
+
+            <div class="relative z-10 max-w-5xl mx-auto text-center">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-400 text-yellow-900 text-sm font-bold uppercase tracking-wider mb-6 shadow-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10">
+                        </path>
+                    </svg>
+                    Centro de Descargas
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Documentos y Formularios</h1>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                    Accede a toda la documentación oficial, formularios, manuales y recursos necesarios para tus
+                    trámites marítimos
+                </p>
+            </div>
+        </section>
+
+        <!-- Downloads Content -->
+        <section class="py-16 px-4" x-data="{ activeTab: 'todos', searchQuery: '' }">
+            <div class="max-w-7xl mx-auto">
+
+                <!-- Search and Filter Bar -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 mb-8 border border-gray-100">
+                    <div class="flex flex-col md:flex-row gap-4 items-center">
+                        <div class="flex-1 w-full">
+                            <div class="relative">
+                                <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                                <input x-model="searchQuery" type="text" placeholder="Buscar documentos..."
+                                    class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
+                            </div>
+                        </div>
+                        <div class="flex gap-2 flex-wrap justify-center">
+                            <button @click="activeTab = 'todos'"
+                                :class="activeTab === 'todos' ? 'bg-blue-900 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
+                                class="px-4 py-2 rounded-lg font-semibold transition-colors">
+                                Todos
+                            </button>
+                            <button @click="activeTab = 'formularios'"
+                                :class="activeTab === 'formularios' ? 'bg-blue-900 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
+                                class="px-4 py-2 rounded-lg font-semibold transition-colors">
+                                Formularios
+                            </button>
+                            <button @click="activeTab = 'normativa'"
+                                :class="activeTab === 'normativa' ? 'bg-blue-900 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
+                                class="px-4 py-2 rounded-lg font-semibold transition-colors">
+                                Normativa
+                            </button>
+                            <button @click="activeTab = 'manuales'"
+                                :class="activeTab === 'manuales' ? 'bg-blue-900 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
+                                class="px-4 py-2 rounded-lg font-semibold transition-colors">
+                                Manuales
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                            <span class="text-2xl font-bold">24</span>
+                        </div>
+                        <p class="text-blue-100 text-sm font-medium">Documentos Totales</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                </path>
+                            </svg>
+                            <span class="text-2xl font-bold">12</span>
+                        </div>
+                        <p class="text-green-100 text-sm font-medium">Formularios</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6 text-white shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                </path>
+                            </svg>
+                            <span class="text-2xl font-bold">8</span>
+                        </div>
+                        <p class="text-purple-100 text-sm font-medium">Manuales</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl p-6 text-white shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                                </path>
+                            </svg>
+                            <span class="text-2xl font-bold">2.4K</span>
+                        </div>
+                        <p class="text-yellow-100 text-sm font-medium">Descargas Mensuales</p>
+                    </div>
+                </div>
+
+                <!-- Documents Grid - Formularios -->
+                <div x-show="activeTab === 'todos' || activeTab === 'formularios'" x-transition class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        Formularios
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                        <!-- Document Card 1 -->
+                        <div
+                            class="bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                            <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-white">
+                                            <p class="text-xs font-semibold opacity-90">PDF</p>
+                                            <p class="text-xs opacity-75">245 KB</p>
+                                        </div>
+                                    </div>
+                                    <span
+                                        class="bg-green-400 text-green-900 text-xs font-bold px-2 py-1 rounded-full">Nuevo</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Solicitud de Permiso de Navegación</h3>
+                                <p class="text-sm text-gray-600 mb-4">Formulario para solicitar permiso de navegación en
+                                    aguas jurisdiccionales.</p>
+                                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                                    <span>Actualizado: 15/12/2024</span>
+                                    <span>472 descargas</span>
+                                </div>
+                                <a href="#"
+                                    class="block w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-center flex items-center justify-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                    Descargar
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Document Card 2 -->
+                        <div
+                            class="bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                            <div class="bg-gradient-to-r from-green-500 to-green-600 p-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-white">
+                                            <p class="text-xs font-semibold opacity-90">PDF</p>
+                                            <p class="text-xs opacity-75">189 KB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Registro de Embarcación Menor</h3>
+                                <p class="text-sm text-gray-600 mb-4">Formulario para registro oficial de embarcaciones
+                                    menores de recreo.</p>
+                                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                                    <span>Actualizado: 10/12/2024</span>
+                                    <span>328 descargas</span>
+                                </div>
+                                <a href="#"
+                                    class="block w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-center flex items-center justify-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                    Descargar
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Document Card 3 -->
+                        <div
+                            class="bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                            <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-white">
+                                            <p class="text-xs font-semibold opacity-90">DOCX</p>
+                                            <p class="text-xs opacity-75">156 KB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Certificado de Marinero</h3>
+                                <p class="text-sm text-gray-600 mb-4">Solicitud de certificación profesional para gente
+                                    de mar.</p>
+                                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                                    <span>Actualizado: 08/12/2024</span>
+                                    <span>582 descargas</span>
+                                </div>
+                                <a href="#"
+                                    class="block w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-center flex items-center justify-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                    Descargar
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Documents Grid - Normativa -->
+                <div x-show="activeTab === 'todos' || activeTab === 'normativa'" x-transition class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                            </path>
+                        </svg>
+                        Normativa y Leyes
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                        <!-- Normativa Card 1 -->
+                        <div
+                            class="bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                            <div class="bg-gradient-to-r from-red-500 to-red-600 p-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-white">
+                                            <p class="text-xs font-semibold opacity-90">PDF</p>
+                                            <p class="text-xs opacity-75">1.2 MB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Ley de Navegación Marítima 2024</h3>
+                                <p class="text-sm text-gray-600 mb-4">Compendio completo de la normativa vigente de
+                                    navegación marítima.</p>
+                                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                                    <span>Publicado: 01/01/2024</span>
+                                    <span>1.2K descargas</span>
+                                </div>
+                                <a href="#"
+                                    class="block w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-center flex items-center justify-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                    Descargar
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Normativa Card 2 -->
+                        <div
+                            class="bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                            <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 p-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-white">
+                                            <p class="text-xs font-semibold opacity-90">PDF</p>
+                                            <p class="text-xs opacity-75">845 KB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Reglamento de Seguridad Marítima</h3>
+                                <p class="text-sm text-gray-600 mb-4">Normativas de seguridad para embarcaciones y
+                                    navegación.</p>
+                                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                                    <span>Publicado: 15/11/2023</span>
+                                    <span>890 descargas</span>
+                                </div>
+                                <a href="#"
+                                    class="block w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-center flex items-center justify-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                    Descargar
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Documents Grid - Manuales -->
+                <div x-show="activeTab === 'todos' || activeTab === 'manuales'" x-transition>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                            </path>
+                        </svg>
+                        Manuales y Guías
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                        <!-- Manual Card 1 -->
+                        <div
+                            class="bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                            <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 p-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-white">
+                                            <p class="text-xs font-semibold opacity-90">PDF</p>
+                                            <p class="text-xs opacity-75">3.5 MB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Manual del Navegante</h3>
+                                <p class="text-sm text-gray-600 mb-4">Guía completa de navegación segura y
+                                    procedimientos marítimos.</p>
+                                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                                    <span>Actualizado: 20/11/2024</span>
+                                    <span>645 descargas</span>
+                                </div>
+                                <a href="#"
+                                    class="block w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-center flex items-center justify-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                    Descargar
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Manual Card 2 -->
+                        <div
+                            class="bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                            <div class="bg-gradient-to-r from-teal-500 to-teal-600 p-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-white">
+                                            <p class="text-xs font-semibold opacity-90">PDF</p>
+                                            <p class="text-xs opacity-75">2.1 MB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Guía de Primeros Auxilios en el Mar
+                                </h3>
+                                <p class="text-sm text-gray-600 mb-4">Manual de procedimientos médicos de emergencia en
+                                    navegación.</p>
+                                <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                                    <span>Actualizado: 05/11/2024</span>
+                                    <span>423 descargas</span>
+                                </div>
+                                <a href="#"
+                                    class="block w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-center flex items-center justify-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                    Descargar
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Help Section -->
+                <div class="mt-12 bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-8 border border-blue-200">
+                    <div class="flex flex-col md:flex-row items-center gap-6">
+                        <div class="w-16 h-16 bg-blue-900 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="flex-1 text-center md:text-left">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">¿No encuentras lo que buscas?</h3>
+                            <p class="text-gray-700">Si necesitas un documento específico o tienes dudas sobre algún
+                                formulario, nuestro equipo está disponible para ayudarte.</p>
+                        </div>
+                        <a href="contacto.html"
+                            class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition-colors flex-shrink-0 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            Contáctanos
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-auto">
+        <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+            <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="sm:col-span-2">
+                    <a href="/" class="inline-flex items-center">
+                        <svg class="w-8 text-blue-900" viewBox="0 0 24 24" stroke-linejoin="round" stroke-width="2"
+                            stroke-linecap="round" stroke-miterlimit="10" stroke="currentColor" fill="none">
+                            <rect x="3" y="1" width="7" height="12"></rect>
+                            <rect x="3" y="17" width="7" height="6"></rect>
+                            <rect x="14" y="1" width="7" height="6"></rect>
+                            <rect x="14" y="11" width="7" height="12"></rect>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Capitanía</span>
+                    </a>
+                    <div class="mt-6 lg:max-w-sm">
+                        <p class="text-sm text-gray-800">
+                            Comprometidos con la seguridad marítima y la protección de nuestros mares.
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-2 text-sm">
+                    <p class="text-base font-bold tracking-wide text-gray-900">Contactos</p>
+                    <div class="flex">
+                        <p class="mr-1 text-gray-800">Teléfono:</p>
+                        <a href="tel:850-123-5021"
+                            class="transition-colors duration-300 text-blue-900 hover:text-blue-700">850-123-5021</a>
+                    </div>
+                    <div class="flex">
+                        <p class="mr-1 text-gray-800">Email:</p>
+                        <a href="mailto:info@capitania.gob"
+                            class="transition-colors duration-300 text-blue-900 hover:text-blue-700">info@capitania.gob</a>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-base font-bold tracking-wide text-gray-900">Social</span>
+                    <div class="flex items-center mt-1 space-x-3">
+                        <div
+                            class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:bg-blue-100 hover:text-blue-900 transition-colors cursor-pointer">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </div>
+                        <div
+                            class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:bg-blue-100 hover:text-blue-900 transition-colors cursor-pointer">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const button = document.getElementById("mobile-menu-button");
+            const menu = document.getElementById("mobile-menu");
+            if (button && menu) {
+                button.addEventListener("click", () => {
+                    menu.classList.toggle("hidden");
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
